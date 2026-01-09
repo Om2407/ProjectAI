@@ -224,7 +224,10 @@ const CodeGenerator = forwardRef<CodeGeneratorRef, CodeGeneratorProps>((_props, 
       const imageURL = await fetchPexelsImage(prompt);
 
       const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+      
+      // ✅ FIXED: Changed from "gemini-2.0-flash-exp" to "gemini-2.5-flash-lite"
+      // This model has better free tier quota limits
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
       const systemPrompt = `You are an expert web developer. Generate clean, modern, and functional HTML, CSS, and JavaScript code based on the user's request.
 
