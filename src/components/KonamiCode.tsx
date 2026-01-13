@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { useKonamiCode } from '../hooks/useKonamicode';
+import { useKonamiCode } from "../hooks/useKonamiCode";
 
 const KonamiCode = () => {
   const isActivated = useKonamiCode();
